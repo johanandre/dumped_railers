@@ -18,7 +18,7 @@ module DumpedRailers
 
         yaml_files.map { |file| 
           raw_data = ::File.read(file)
-          YAML.safe_load(raw_data, permitted_classes: yaml_column_permitted_classes)
+          YAML.safe_load(raw_data, permitted_classes: yaml_column_permitted_classes, aliases: true)
         }
       end
 
